@@ -1,0 +1,33 @@
+ * Serving Flask app "LoginPage_SQLite" (lazy loading)
+ * Environment: production
+[31m   WARNING: This is a development server. Do not use it in a production deployment.[0m
+[2m   Use a production WSGI server instead.[0m
+ * Debug mode: off
+ * Running on http://0.0.0.0:5050/ (Press CTRL+C to quit)
+172.17.0.1 - - [04/Dec/2020 14:07:27] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [04/Dec/2020 14:07:27] "[36mGET /static/form-style.css HTTP/1.1[0m" 304 -
+[2020-12-04 14:07:30,592] ERROR in app: Exception on /login [POST]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/login/LoginPage_SQLite.py", line 23, in login_v2
+    if verify_hash(request.form['username'], request.form['password']):
+  File "/home/login/LoginPage_SQLite.py", line 53, in verify_hash
+    c.execute(query)
+sqlite3.OperationalError: no such table: USER_HASH
+172.17.0.1 - - [04/Dec/2020 14:07:30] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+username:  DarioB  password:  123  hash:  a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3
+172.17.0.1 - - [04/Dec/2020 14:07:37] "[37mPOST /register HTTP/1.1[0m" 200 -
+172.17.0.1 - - [04/Dec/2020 14:07:41] "[37mPOST /register HTTP/1.1[0m" 200 -
+172.17.0.1 - - [04/Dec/2020 14:07:45] "[37mPOST /login HTTP/1.1[0m" 200 -
+172.17.0.1 - - [04/Dec/2020 14:07:50] "[37mPOST /login HTTP/1.1[0m" 200 -

@@ -1,0 +1,27 @@
+Login: admin
+password:7ad27ee3c7de45cfb665588f7085cb87
+* docker start aad7345df91d
+* docker stop aad7345df91d
+
+Oude:
+0b6d56b7b35b4788a76c8de4bf0a000d
+1e77ba2ded4749a38a4135cc362dec37
+7b719c1ac0d040bca8f7b2bb50ce0149
+
+
+
+
+Jenkins kali linux password:
+63ece3870d15410cb9eb5e00cf81f8b1
+
+Admin user:
+username: maxim
+password: 123
+fullname: maxim
+email: maxim.cirnici@student.odisee.be
+
+
+Jenkins Commando:
+docker run --rm -u root -p 8080:8080 -v jenkins-data:/var/jenkins_home -v $(which docker):/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock -v "$HOME":/home --name jenkins_server jenkins/jenkins:lts
+
+docker run -p 8080:8080 --name=jenkins-master jenkins/jenkins
