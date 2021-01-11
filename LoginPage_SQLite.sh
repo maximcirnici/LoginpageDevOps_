@@ -11,6 +11,7 @@ cp -r static/* tempdir/static/.
 echo "FROM python" >> tempdir/Dockerfile
 echo "RUN pip install flask" >> tempdir/Dockerfile
 echo "RUN pip install pyotp" >> tempdir/Dockerfile
+echo "RUN sudo apt-get isntall curl" >> tempdir/Dockerfile
 echo "COPY  ./static /home/login/static/" >> tempdir/Dockerfile
 echo "COPY  ./templates /home/login/templates/" >> tempdir/Dockerfile
 echo "COPY  LoginPage_SQLite.py /home/login/" >> tempdir/Dockerfile
